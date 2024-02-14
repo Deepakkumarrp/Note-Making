@@ -28,8 +28,11 @@
   body: JSON.stringify(payload),
 })
   .then(response => response.json())
-  .then(data => console.log(data))
+  .then(data => {
+    localStorage.setItem("token",data.token);
+    console.log(data)
+    location.href = "./notes.html"
+  })
   .catch(error => console.error('Error:', error));
-  
     }
 </script>
