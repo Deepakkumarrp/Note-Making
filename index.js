@@ -12,6 +12,10 @@ app.use(express.json())
 app.use("/users",userRouter)
 app.use("/notes",noteRouter)
 
+app.use("/",(req,res) => {
+    res.send({"mssg":"We're working."})
+})
+
 app.listen(process.env.PORT,async() => {
     try{
         await connection;
